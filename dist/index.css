@@ -1,0 +1,36 @@
+body{
+	background-image: url(img/weather.jpg);
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+	height:100%;
+}
+
+.container{
+  display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+input{
+	color: #000;
+	background-color: #fff;
+}
+
+select, input{
+	border-radius: 8px;
+	height: 40px;
+	font-size: 20px;
+	
+}
+#city-name{
+	width: 300px;
+	padding: 6px;
+}
+#submit{
+	background-color: #d3d000;
+	font-weight: bold;
+}
+#submit:hover{
+	background-color: #f9f503;
+}
