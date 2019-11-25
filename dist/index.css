@@ -2,15 +2,18 @@ body{
 	background-image: url(img/weather.jpg);
 	background-position: center;
 	background-size: cover;
-	overflow: hidden;
-	height:100%;
+
 }
 
 .container{
-  display: flex;
+	margin-top: 5%;
 	align-items: center;
 	justify-content: center;
-	height: 100%;
+	overflow-y: scroll;
+}
+form{
+	text-align: center;
+	vertical-align: middle;
 }
 input{
 	color: #000;
@@ -24,7 +27,7 @@ select, input{
 	
 }
 #city-name{
-	width: 300px;
+	width: 250px;
 	padding: 6px;
 }
 #submit{
@@ -33,4 +36,45 @@ select, input{
 }
 #submit:hover{
 	background-color: #f9f503;
+}
+.weather-data{
+	color: #000;
+	font-weight: bold;
+}
+.weather-data .image{
+	color: #f86435
+}
+
+.col-md-2, .sys, .main-data, .weather{
+	height: 350px;
+	background-color: #fff;
+	opacity:0.8;
+	margin-right: 20px;
+}
+.datas{
+	color: #000;
+	font-weight: bold;
+}
+.datas img{
+	display:block;
+  margin:auto;
+
+}
+.sys p, .main-data p, .weather p{
+	margin: 0;
+	text-align: center;
+	padding-bottom: 13px;
+	
+}
+.town-name > h3, .degrees > h3, .sunset > h3 {
+	margin: 0;
+}
+
+.forecast{
+	text-align: center;
+	margin-bottom: 15px;
+	font-weight: bolder;
+}
+.headers{
+	text-align: center;
 }
