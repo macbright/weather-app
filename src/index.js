@@ -73,14 +73,15 @@ const degrees = (k, image) =>{
 }
 
 const convertToCelsius = (k) =>{
-	return k - 273.15;
+	
+	return parseFloat((k - 273.15).toFixed(6));
 }
 
 const latitute = (long, lati) => {
 	const lon = document.createElement('h3')
-	lon.textContent =`Lon: ${long} &#176`
+	lon.innerHTML = `Lon: ${long}&#176`
 	const lat = document.createElement('h3')
-	lat.textContent =`lat: ${lati} &#176`
+	lat.innerHTML = `lat: ${lati}&#176`
 	$('.sunset').appendChild(lat)
 	$('.sunset').appendChild(lon)
 }
@@ -139,12 +140,13 @@ const changeBg = () => {
 	} else if(sky === 'Snow'){
 		$('body').style.backgroundImage = "url(../dist/img/snow.gif)";
 	}else if(sky === 'Rain'){
-		$('body').style.backgroundImage = "url(./dist/img/rain.gif)";
+		$('body').style.backgroundImage = "url(../dist/img/rain.gif)";
 	} else if (sky === 'Clouds') {
-		$('body').style.backgroundImage = "url(./dist/img/cloudy.gif)";
+		$('body').style.backgroundImage = "url(../dist/img/cloudy.gif)";
 	} else {
-		$('body').style.backgroundImage = "url(./dist/img/weather.jpg)";
+		$('body').style.backgroundImage = "url(../dist/img/weather.jpg)";
 	}
 
 }
 
+display()
