@@ -1,5 +1,5 @@
 
-/* global document, fetch, localStorage */
+/* global document, fetch, alert */
 /* eslint no-undef: "error" */
 /* eslint prefer-arrow-callback: "error" */
 /* eslint-disable no-use-before-define: "error" */
@@ -52,10 +52,10 @@ const degrees = (k, image) => {
 	toggle.classList.add('checkbox');
 	toggle.addEventListener('change', (e) => {
 		e.preventDefault();
-		if(toggle.checked){
-			const k =  parseFloat((c + 273.15).toFixed(4));
+		if (toggle.checked) {
+			const k = parseFloat((c + 273.15).toFixed(4));
 			temp.innerHTML = `${k} &#8490`;
-		} else if(!toggle.checked) {
+		} else if (!toggle.checked) {
 			temp.innerHTML = `${c} &#8451`;
 		}
 	});
@@ -140,9 +140,11 @@ const changeBg = () => {
 	}
 };
 
+ // eslint-disable-next-line consistent-return
 const getApi = () => {
 	const city = $('#city-name').value;
-	if(city === ''){
+	if (city === '') {
+		// eslint-disable-next-line no-alert
 		alert('city name can not be blank');
 	} else {
 		return `https://api.openweathermap.org/data/2.5/weather?q=${city},Belarus&APPID=19162a83776adb533575bcaa858e87a0`;
@@ -170,7 +172,9 @@ $('#submit').addEventListener('click', (e) => {
 		.then((response) => {
 			weatherData = response;
 			display();
+			// eslint-disable-next-line no-unused-vars
 		}).catch((err) => {
+				// eslint-disable-next-line no-alert
 			alert(`Either the city name you entered is not 
 			correct or the city is not in our database. Please enter a valid city name`);
 		});
