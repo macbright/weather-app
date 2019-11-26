@@ -9,7 +9,8 @@ const $ = document.querySelector.bind(document);
 
 
 const convertToCelsius = (k) => {
-	return parseFloat((k - 273.15).toFixed(6));
+	const value = parseFloat((k - 273.15).toFixed(6));
+	return value;
 };
 
 const weatherimage = (icon) => {
@@ -59,6 +60,7 @@ const sys = (data, image) => {
 	const img = weatherimage(image);
 	img.classList.add('image');
 	$('.sys').appendChild(img);
+	// eslint-disable-next-line iterators/generators
 	for (const [key, value] of Object.entries(data)) {
 		const p = document.createElement('p');
 		p.innerHTML = `${key}:  ${value}`;
@@ -70,6 +72,7 @@ const mainData = (data, image) => {
 	const img = weatherimage(image);
 	img.classList.add('image');
 	$('.main-data').appendChild(img);
+	// eslint-disable-next-line iterators/generators
 	for (const [key, value] of Object.entries(data)) {
 		const p = document.createElement('p');
 		p.innerHTML = `${key}:  ${value}`;
@@ -84,6 +87,7 @@ const weather = (data, image) => {
 	const heading = document.createElement('p');
 	heading.innerHTML = 'Weather';
 	$('.weather').appendChild(heading);
+	// eslint-disable-next-line iterators/generators
 	for (const [key, value] of Object.entries(data)) {
 		const p = document.createElement('p');
 		p.innerHTML = `${key}:  ${value}`;
@@ -122,21 +126,6 @@ const getApi = () => {
 	return `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=19162a83776adb533575bcaa858e87a0`;
 };
 
-
-$('#submit').addEventListener('click', (e) => {
-	e.preventDefault();
-	const url = getApi();
-	fetch(url, { mode: 'cors' })
-		.then(response => {
-			return response.json();
-		}).then(response => {
-			localStorage.setItem('city', JSON.stringify(response));
-			display();
-		}).catch(err => {
-			return `Error Reading data  ${err}`;
-		});
-});
-
 const display = () => {
 	clearNodes();
 	changeBg();
@@ -148,6 +137,19 @@ const display = () => {
 	mainData(weatherData.main, weatherData.weather[0].icon);
 	weather(weatherData.weather[0], weatherData.weather[0].icon);
 };
+
+$('#submit').addEventListener('click', (e) => {
+	e.preventDefault();
+	const url = getApi();
+	fetch(url, { mode: 'cors' })
+		.then(response =>  response.json())
+		.then((response => {
+			localStorage.setItem('city', JSON.stringify(response));
+			display();
+		})).catch((err =>  `Error Reading data  ${err}`));
+});
+
+
 
 
 display();
