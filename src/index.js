@@ -1,5 +1,5 @@
 
-/* global window, localStorage */
+/* global document, localStorage */
 /* eslint no-undef: "error" */
 /* eslint prefer-arrow-callback: "error" */
 /* eslint-disable no-use-before-define: "error" */
@@ -61,7 +61,7 @@ const sys = (data, image) => {
 	$('.sys').appendChild(img);
 	for (const [key, value] of Object.entries(data)) {
 		const p = document.createElement('p');
-		p.innerHTML = `${key}:  ${value}`; 
+		p.innerHTML = `${key}:  ${value}`;
 		$('.sys').appendChild(p);
 	}
 };
@@ -98,7 +98,7 @@ const clearNodes = () => {
 	$('.sys').innerHTML = '';
 	$('.main-data').innerHTML = '';
 	$('.weather').innerHTML = '';
-}
+};
 
 const changeBg = () => {
 	const weatherData = JSON.parse(localStorage.getItem('city'));
@@ -107,21 +107,20 @@ const changeBg = () => {
 		$('body').style.backgroundImage = 'url(../dist/img/weather.jpg)';
 	} else if (sky === 'Snow') {
 		$('body').style.backgroundImage = 'url(../dist/img/snow.gif)';
-	}else if (sky === 'Rain') {
+	} else if (sky === 'Rain') {
 		$('body').style.backgroundImage = 'url(../dist/img/rain.gif)';
 	} else if (sky === 'Clouds') {
 		$('body').style.backgroundImage = 'url(../dist/img/cloudy.gif)';
 	} else {
 		$('body').style.backgroundImage = 'url(../dist/img/weather.jpg)';
 	}
-
-}
+};
 
 const getApi = () => {
 	const city = $('#city-name').value;
 	const country = $('#country').value;
 	return `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=19162a83776adb533575bcaa858e87a0`;
-}
+};
 
 
 $('#submit').addEventListener('click', (e) => {
