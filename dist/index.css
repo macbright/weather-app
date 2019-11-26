@@ -2,79 +2,86 @@ body{
 	background-image: url(img/weather.jpg);
 	background-position: center;
 	background-size: cover;
-
 }
 
 .container{
-	margin-top: 5%;
 	align-items: center;
 	justify-content: center;
-
+	margin-top: 5%;
+	
 }
 form{
 	text-align: center;
 	vertical-align: middle;
 }
 input{
-	color: #000;
 	background-color: #fff;
+	color: #000;
 }
 
 select, input{
 	border-radius: 8px;
-	height: 40px;
 	font-size: 20px;
-	
+	height: 40px;
 }
+
 #city-name{
-	width: 250px;
 	padding: 6px;
+	width: 250px;	
 }
+
 #submit{
 	background-color: #d3d000;
 	font-weight: bold;
 }
+
 #submit:hover{
 	background-color: #f9f503;
 }
+
 .weather-data{
 	color: #000;
 	font-weight: bold;
 }
+
 .weather-data .image{
 	color: #f86435
 }
 
 .col-md-2, .sys, .main-data, .weather{
-	height: 350px;
 	background-color: #fff;
-	opacity:0.8;
+	height: 350px;
 	margin-right: 20px;
+	opacity:0.8;
 }
+
 .datas{
 	color: #000;
 	font-weight: bold;
 }
+
 .datas img{
 	display:block;
   margin:auto;
 
 }
+
 .sys p, .main-data p, .weather p{
 	margin: 0;
-	text-align: center;
 	padding-bottom: 13px;
-	
+	text-align: center;
 }
+
 .town-name > h3, .degrees > h3, .sunset > h3 {
 	margin: 0;
 }
 
 .forecast{
-	text-align: center;
-	margin-bottom: 15px;
 	font-weight: bolder;
+	margin-bottom: 15px;
+	text-align: center;
 }
+
 .headers{
 	text-align: center;
 }
