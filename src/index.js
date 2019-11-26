@@ -140,7 +140,7 @@ const changeBg = () => {
 	}
 };
 
- // eslint-disable-next-line consistent-return
+// eslint-disable-next-line consistent-return
 const getApi = () => {
 	const city = $('#city-name').value;
 	if (city === '') {
@@ -174,7 +174,7 @@ $('#submit').addEventListener('click', (e) => {
 			display();
 			// eslint-disable-next-line no-unused-vars
 		}).catch((err) => {
-				// eslint-disable-next-line no-alert
+			// eslint-disable-next-line no-alert
 			alert(`Either the city name you entered is not 
 			correct or the city is not in our database. Please enter a valid city name`);
 		});
