@@ -38,14 +38,33 @@ const cityname = (data, image, time) => {
 
 const degrees = (k, image) => {
 	const c = convertToCelsius(k);
+	const span = document.createElement('span');
+	span.innerHTML = 'check to Kelvin ';
+	span.style.display = 'block';
+	$('.degrees').appendChild(span);
 	const temp = document.createElement('h3');
+	temp.style.display = 'inline';
+	temp.classList.add('name2');
+	const toggle = document.createElement('input');
+	$('.degrees').appendChild(toggle);
+	toggle.type = 'checkbox';
+	toggle.name = 'checkbox';
+	toggle.classList.add('checkbox');
+	toggle.addEventListener('change', (e) => {
+		e.preventDefault();
+		if(toggle.checked){
+			const k =  parseFloat((c + 273.15).toFixed(4));
+			temp.innerHTML = `${k} &#8490`;
+		} else if(!toggle.checked) {
+			temp.innerHTML = `${c} &#8451`;
+		}
+	});
 	temp.innerHTML = `${c} &#8451`;
 	$('.degrees').appendChild(temp);
 	const img = weatherimage(image);
 	img.classList.add('image');
 	$('.degrees').appendChild(img);
 };
-
 
 const latitute = (long, lati) => {
 	const lon = document.createElement('h3');
@@ -104,9 +123,10 @@ const clearNodes = () => {
 	$('.weather').innerHTML = '';
 };
 
+let weatherData = '';
 const changeBg = () => {
-	const weatherData = JSON.parse(localStorage.getItem('city'));
-	const sky = weatherData.weather[0].main;
+	const weatherData1 = weatherData;
+	const sky = weatherData1.weather[0].main;
 	if (sky === 'Clear') {
 		$('body').style.backgroundImage = 'url(../dist/img/weather.jpg)';
 	} else if (sky === 'Snow') {
@@ -122,20 +142,24 @@ const changeBg = () => {
 
 const getApi = () => {
 	const city = $('#city-name').value;
-	const country = $('#country').value;
-	return `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=19162a83776adb533575bcaa858e87a0`;
+	if(city === ''){
+		alert('city name can not be blank');
+	} else {
+		return `https://api.openweathermap.org/data/2.5/weather?q=${city},Belarus&APPID=19162a83776adb533575bcaa858e87a0`;
+	}
 };
 
 const display = () => {
 	clearNodes();
 	changeBg();
-	const weatherData = JSON.parse(localStorage.getItem('city'));
 	cityname(weatherData.name, weatherData.weather[0].icon, weatherData.timezone);
 	degrees(weatherData.main.temp, weatherData.weather[0].icon);
 	latitute(weatherData.coord.lon, weatherData.coord.lat);
 	sys(weatherData.sys, weatherData.weather[0].icon);
 	mainData(weatherData.main, weatherData.weather[0].icon);
 	weather(weatherData.weather[0], weatherData.weather[0].icon);
+	$('.container').style.marginTop = '20%';
+	$('.weather-data').style.display = 'block';
 };
 
 $('#submit').addEventListener('click', (e) => {
@@ -144,9 +168,12 @@ $('#submit').addEventListener('click', (e) => {
 	fetch(url, { mode: 'cors' })
 		.then(response => response.json())
 		.then((response) => {
-			localStorage.setItem('city', JSON.stringify(response));
+			weatherData = response;
 			display();
-		}).catch(err => `Error Reading data  ${err}`);
+		}).catch((err) => {
+			alert(`Either the city name you entered is not 
+			correct or the city is not in our database. Please enter a valid city name`);
+		});
 });
 
-display();
+

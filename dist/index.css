@@ -7,7 +7,7 @@ body{
 .container{
 	align-items: center;
 	justify-content: center;
-	margin-top: 5%;
+	margin-top: 20%;
 	
 }
 form{
@@ -19,7 +19,7 @@ input{
 	color: #000;
 }
 
-select, input{
+form input, select{
 	border-radius: 8px;
 	font-size: 20px;
 	height: 40px;
@@ -84,4 +84,22 @@ select, input{
 
 .headers{
 	text-align: center;
+}
+.weather-data{
+	display: none;
+}
+.name2{
+	float: left;
+}
+.checkbox{
+	float: left;
+	margin-right: 10px;
+	margin-left: 10px;
+	zoom: 2.5;
+}
+
+span{
+	padding-bottom: 10px;
+	padding-left: 25px;
+	text-align: left;
 }
