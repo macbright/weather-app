@@ -1,5 +1,5 @@
 
-/* global document, localStorage */
+/* global document, fetch, localStorage */
 /* eslint no-undef: "error" */
 /* eslint prefer-arrow-callback: "error" */
 /* eslint-disable no-use-before-define: "error" */
@@ -8,6 +8,9 @@
 const $ = document.querySelector.bind(document);
 
 
+const convertToCelsius = (k) => {
+	return parseFloat((k - 273.15).toFixed(6));
+};
 
 const weatherimage = (icon) => {
 	const img = document.createElement('img');
@@ -42,9 +45,6 @@ const degrees = (k, image) => {
 	$('.degrees').appendChild(img);
 };
 
-const convertToCelsius = (k) => {
-	return parseFloat((k - 273.15).toFixed(6));
-};
 
 const latitute = (long, lati) => {
 	const lon = document.createElement('h3');
@@ -127,14 +127,14 @@ $('#submit').addEventListener('click', (e) => {
 	e.preventDefault();
 	const url = getApi();
 	fetch(url, { mode: 'cors' })
-	.then(function (response) {
-		return response.json();
-	}).then(function (response) {
-		localStorage.setItem('city', JSON.stringify(response));
-		display();
-	}).catch(err => {
-		return ('Error Reading data ' + err);
-	});
+		.then(response => {
+			return response.json();
+		}).then(response => {
+			localStorage.setItem('city', JSON.stringify(response));
+			display();
+		}).catch(err => {
+			return `Error Reading data  ${err}`;
+		});
 });
 
 const display = () => {
