@@ -1,3 +1,6 @@
+
+/*global window, localStorage */
+/*eslint no-undef: "error"*/
 const $ = document.querySelector.bind(document);
 
 
