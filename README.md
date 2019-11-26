@@ -15,7 +15,7 @@ The project is part of a series of projects to be completed by students of [Micr
 - webpack
 
 ## Demo
- Check out the live demo of the project. [Click]()
+ Check out the live demo of the project. [Click](https://raw.githack.com/macbright/weather-app/weather/dist/index.html)
 
 ## Usage
 > Clone the repository to your local machine
