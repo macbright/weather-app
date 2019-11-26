@@ -60,7 +60,7 @@ const sys = (data, image) => {
 	const img = weatherimage(image);
 	img.classList.add('image');
 	$('.sys').appendChild(img);
-	// eslint-disable-next-line iterators/generators
+	// eslint-disable-next-line no-restricted-syntax
 	for (const [key, value] of Object.entries(data)) {
 		const p = document.createElement('p');
 		p.innerHTML = `${key}:  ${value}`;
@@ -72,7 +72,7 @@ const mainData = (data, image) => {
 	const img = weatherimage(image);
 	img.classList.add('image');
 	$('.main-data').appendChild(img);
-	// eslint-disable-next-line iterators/generators
+	// eslint-disable-next-line no-restricted-syntax
 	for (const [key, value] of Object.entries(data)) {
 		const p = document.createElement('p');
 		p.innerHTML = `${key}:  ${value}`;
@@ -87,7 +87,7 @@ const weather = (data, image) => {
 	const heading = document.createElement('p');
 	heading.innerHTML = 'Weather';
 	$('.weather').appendChild(heading);
-	// eslint-disable-next-line iterators/generators
+	// eslint-disable-next-line no-restricted-syntax
 	for (const [key, value] of Object.entries(data)) {
 		const p = document.createElement('p');
 		p.innerHTML = `${key}:  ${value}`;
@@ -142,14 +142,11 @@ $('#submit').addEventListener('click', (e) => {
 	e.preventDefault();
 	const url = getApi();
 	fetch(url, { mode: 'cors' })
-		.then(response =>  response.json())
-		.then((response => {
+		.then(response => response.json())
+		.then((response) => {
 			localStorage.setItem('city', JSON.stringify(response));
 			display();
-		})).catch((err =>  `Error Reading data  ${err}`));
+		}).catch(err => `Error Reading data  ${err}`);
 });
-
-
-
 
 display();
