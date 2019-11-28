@@ -2,35 +2,104 @@ body{
 	background-image: url(img/weather.jpg);
 	background-position: center;
 	background-size: cover;
-	overflow: hidden;
-	height:100%;
 }
 
 .container{
-  display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 100%;
-}
-input{
-	color: #000;
-	background-color: #fff;
-}
-
-select, input{
-	border-radius: 8px;
-	height: 40px;
-	font-size: 20px;
+	margin-top: 20%;
 	
 }
-#city-name{
-	width: 300px;
-	padding: 6px;
+form{
+	text-align: center;
+	vertical-align: middle;
 }
+input{
+	background-color: #fff;
+	color: #000;
+}
+
+form input, select{
+	border-radius: 8px;
+	font-size: 20px;
+	height: 40px;
+}
+
+#city-name{
+	padding: 6px;
+	width: 250px;	
+}
+
 #submit{
 	background-color: #d3d000;
 	font-weight: bold;
 }
+
 #submit:hover{
 	background-color: #f9f503;
+}
+
+.weather-data{
+	color: #000;
+	font-weight: bold;
+}
+
+.weather-data .image{
+	color: #f86435
+}
+
+.col-md-2, .sys, .main-data, .weather{
+	background-color: #fff;
+	height: 350px;
+	margin-right: 20px;
+	opacity:0.8;
+}
+
+.datas{
+	color: #000;
+	font-weight: bold;
+}
+
+.datas img{
+	display:block;
+  margin:auto;
+
+}
+
+.sys p, .main-data p, .weather p{
+	margin: 0;
+	padding-bottom: 13px;
+	text-align: center;
+}
+
+.town-name > h3, .degrees > h3, .sunset > h3 {
+	margin: 0;
+}
+
+.forecast{
+	font-weight: bolder;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+.headers{
+	text-align: center;
+}
+.weather-data{
+	display: none;
+}
+.name2{
+	float: left;
+}
+.checkbox{
+	float: left;
+	margin-right: 10px;
+	margin-left: 10px;
+	zoom: 2.5;
+}
+
+span{
+	padding-bottom: 10px;
+	padding-left: 25px;
+	text-align: left;
 }
