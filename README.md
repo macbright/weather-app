@@ -7,7 +7,7 @@ The site gets a specific location from the user and toggle displaying the weathe
 
 The project is part of a series of projects to be completed by students of [Microverse](https://www.microverse.org/ "The Global School for Remote Software Developers!").
 
-## Technologies
+## Background
 
 - HTML
 - CSS
@@ -27,38 +27,28 @@ $ git clone https://github.com/macbright/weather-app.git
 > cd into the directory
 
 ```sh
-$ cd Js-to-do-list
-```
-> git clone https://github.com/macbright/weather-app.git
-
-``` 
-cd Js-to-do-list 
+$ cd weather-app
 ```
 
 > create a js file inside the src folder named 'key.js' 
+<br /> add the following lines: 
 
-add the following lines: 
 ```js
 export const API_KEY = 'your api key'
 ```
-```
 
-npm install
-```
-```
-npm watch
-```
-```
-npm start
-```
-```
-open with your favourite web browser.
-```
+`npm install` 
+<br /> to install all the dependencies that are needed
+
+`npm start` <br/> to start the local server which will open a new tap on your default browser 
 
 
-## Designed and developed by
 
-[Bright Okike](https://github.com/macbright)
+## Maintainers 
+
+Okike Bright – [@b_okike](https://twitter.com/b_okike) – brightokike@gmail.com
+
+[https://github.com/macbright/github-link](https://github.com/macbright)
 
 
 ## Contributing
@@ -69,3 +59,7 @@ open with your favourite web browser.
 4. Push to the branch (git push origin feature/[chosen name])
 5. Create a new Pull Request
 
+## License
+
+The JavaScript Templates script is released under the
+[MIT license](https://opensource.org/licenses/MIT).
