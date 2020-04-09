@@ -34,8 +34,16 @@ $ cd Js-to-do-list
 ``` 
 cd Js-to-do-list 
 ```
+
+> create a js file inside the src folder named 'key.js' 
+
+add the following lines: 
+```js
+export const API_KEY = 'your api key'
 ```
- npm install
+```
+
+npm install
 ```
 ```
 npm watch
@@ -46,6 +54,7 @@ npm start
 ```
 open with your favourite web browser.
 ```
+
 
 ## Designed and developed by
 
