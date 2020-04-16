@@ -1,4 +1,9 @@
-# Weather-App
+
+<h1 align=center> **Weather App** </h1>
+
+[![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+[![dependencies Status](https://david-dm.org/dwyl/esta/status.svg)](https://david-dm.org/dwyl/esta)
+
 
 A practical demonstration of designing a website with javascript(API)
 This project is designed with a Javascript(ES6) to emulate  a weather forecast site using weather. 

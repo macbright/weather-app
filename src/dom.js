@@ -1,8 +1,8 @@
 
-import weather1 from '../dist/img/weather.jpg'
-import cloudy1 from '../dist/img/cloudy.gif'
-import rain1 from '../dist/img/rain.gif'
-import snow1 from '../dist/img/snow.gif'
+import weather1 from './img/weather.jpg'
+import cloudy1 from './img/cloudy.gif'
+import rain1 from './img/rain.gif'
+import snow1 from './img/snow.gif'
 
 
 const $ = document.querySelector.bind(document);
@@ -26,6 +26,10 @@ const degrees = (k, image) => {
 	const temp = document.createElement('h3');
 	temp.style.display = 'inline';
 	temp.classList.add('name2');
+	temp.style.backgroundColor = '#fff';
+	temp.style.borderRadius = '20px';
+	temp.style.opacity = '0.8';
+	temp.style.padding = '5px';
 	const toggle = document.createElement('input');
 	$('.degrees').appendChild(toggle);
 	toggle.type = 'checkbox';
@@ -49,6 +53,9 @@ const degrees = (k, image) => {
 
 const timezone = (data) => {
 	const timezone = document.createElement('h2');
+	timezone.classList.add('format1');
+	timezone.style.width = '150px';
+	timezone.style.margin = '0 auto';
 	timezone.innerHTML = `GMT +${data / 3600}`;
 	$('.town-name').appendChild(timezone);
 };
@@ -56,7 +63,10 @@ const timezone = (data) => {
 const cityname = (data, image, time) => {
 	const city = document.createElement('h2');
 	city.innerHTML = data;
+	city.style.width = '250px';
+	city.style.margin = '0 auto';
 	city.classList.add('city-name');
+	city.classList.add('format1');
 	$('.town-name').appendChild(city);
 	timezone(time);
 	const img = weatherimage(image);
@@ -71,8 +81,12 @@ const latitute = (long, lati) => {
 	lon.innerHTML = `Lon: ${long}&#176`;
 	const lat = document.createElement('h3');
 	lat.innerHTML = `lat: ${lati}&#176`;
+	lat.classList.add('format1')
+	lat.style.marginBottom = '10px'
+	lon.classList.add('format1')
 	$('.sunset').appendChild(lat);
 	$('.sunset').appendChild(lon);
+	
 };
 
 const sys = (data, image) => {

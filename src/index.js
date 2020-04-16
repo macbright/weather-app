@@ -6,7 +6,9 @@
 /* eslint-disable indent: "error" */
 // eslint-disable-next-line no-undef
 
-import apiCal from './api'
+import './index.css';
+import apiCal from './api';
+
 
 
 

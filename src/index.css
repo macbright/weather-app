@@ -50,6 +50,7 @@ form input, select{
 
 .col-md-2, .sys, .main-data, .weather{
 	background-color: #fff;
+	border-radius: 15px;
 	height: 350px;
 	margin-right: 20px;
 	opacity:0.8;
@@ -70,6 +71,7 @@ form input, select{
 	margin: 0;
 	padding-bottom: 13px;
 	text-align: center;
+	
 }
 
 .town-name > h3, .degrees > h3, .sunset > h3 {
@@ -78,9 +80,15 @@ form input, select{
 
 .forecast{
 	font-weight: bolder;
-	margin-bottom: 15px;
 	text-align: center;
+	background-color: #fff;
+	opacity:0.8;
+	border-radius: 20px;
+	width: 35%;
+	margin: 0 auto;
+
 }
+ 
 
 .headers{
 	text-align: center;
@@ -99,7 +107,19 @@ form input, select{
 }
 
 span{
-	padding-bottom: 10px;
+	padding: 10px;
 	padding-left: 25px;
 	text-align: left;
+	background-color: #fff;
+	opacity:0.8;
+	border-radius: 20px;
+	width: 170px;
+	margin-bottom: 20px;
+}
+
+.format1 {
+	background-color: #fff;
+	opacity:0.8;
+	border-radius: 20px;
+	padding: 5px;
 }
