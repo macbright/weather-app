@@ -12,7 +12,7 @@ The site gets a specific location from the user and toggle displaying the weathe
 
 The project is part of a series of projects to be completed by students of [Microverse](https://www.microverse.org/ "The Global School for Remote Software Developers!").
 
-![sample](./dist/img/weather1.png)
+![sample](./src/img/weather1.png)
 
 ## Background
 
