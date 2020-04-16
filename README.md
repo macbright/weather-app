@@ -22,7 +22,7 @@ The project is part of a series of projects to be completed by students of [Micr
 - webpack
 
 ## Demo
- Check out the live demo of the project. [Click](https://raw.githack.com/macbright/weather-app/weather/dist/index.html)
+ Check out the live demo of the project. [Click](https://5e98a2cf4254d10251a0d72d--modest-turing-850794.netlify.app/build/index.html)
 
 ## Usage
 > Clone the repository to your local machine
