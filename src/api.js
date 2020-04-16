@@ -18,7 +18,7 @@ function showPosition(position) {
 	let lat = position.coords.latitude;
 	let lon = position.coords.longitude
 	console.log(lat, lon)
-	let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=19162a83776adb533575bcaa858e87a0`
+	let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${API_KEY}`
 	fetch(url, { mode: 'cors' })
 		.then(response => response.json())
 		.then(response => {
@@ -40,7 +40,7 @@ const getApi = () => {
 		// eslint-disable-next-line no-alert
 		alert('city name can not be blank');
 	} else {
-		return `https://api.openweathermap.org/data/2.5/weather?q=${city},Belarus&APPID=19162a83776adb533575bcaa858e87a0`;
+		return `https://api.openweathermap.org/data/2.5/weather?q=${city},Belarus&APPID=${API_KEY}`;
 	}
 };
 
